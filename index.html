@@ -34,7 +34,18 @@
   <a href="Teknikal.html" class="nav-link">
     <i class="bi bi-file-earmark-text text-white"></i>
     <span class="mx-1 text-white">From Teknikal</span>
-  </a>
+  </a> 
+          <div id="clock"></div>
+    <script>
+        setInterval(() => {
+            let date = new Date()
+            let clock = document.getElementById('clock')
+            clock.innerHTML =
+            date.getHours()+":"+
+            date.getMinutes()+":"+
+            date.getSeconds()
+        }, 1000);
+    </script>
            <li class="nav-item">
   <a href="Progres.html" class="nav-link">
     <i class="bi bi-file-earmark-text text-white"></i>
@@ -88,17 +99,6 @@
         <p class="fw-bold">Aplikasi Output Armado</p>
       </nav>
       <!--Konten -->
-       <div id="clock"></div>
-    <script>
-        setInterval(() => {
-            let date = new Date()
-            let clock = document.getElementById('clock')
-            clock.innerHTML =
-            date.getHours()+":"+
-            date.getMinutes()+":"+
-            date.getSeconds()
-        }, 1000);
-    </script>
 <h3 class="text-dark p-3">DASBOARD</h3>
 
 <p class="px-3">DASBOARD <a class="text-dark"></a></p>
