@@ -20,6 +20,60 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.12.1/firebase-app.js";
+
+import {
+  getAuth,
+  signOut,
+  onAuthStateChanged
+}
+from "https://www.gstatic.com/firebasejs/12.12.1/firebase-auth.js";
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyBH9fdaDioSIBohv04Nwn5UsB-Wh8Q8AaU",
+
+  authDomain: "latihan2-ba4c5.firebaseapp.com",
+
+  projectId: "latihan2-ba4c5",
+
+  storageBucket: "latihan2-ba4c5.firebasestorage.app",
+
+  messagingSenderId: "515994512533",
+
+  appId: "1:515994512533:web:7bdd166157ac92f398ff9c"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+onAuthStateChanged(auth, (user) => {
+
+  if (!user) {
+    window.location.href = "login.html";
+  }
+
+});
+
+document.getElementById("logout").onclick = () => {
+
+  signOut(auth).then(() => {
+
+    alert("Logout berhasil");
+
+    window.location.href = "login.html";
+
+  });
+
+};
+
+</script>
   <body>
     <!-- Side-Nav -->
     <div
@@ -78,6 +132,7 @@
   </a>
       </ul>
       <p class="max-1">Profesional</p>
+      <button id="logout">Logout</button>
     </div>
   
 
@@ -133,4 +188,3 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   </body>
 </html>
-
